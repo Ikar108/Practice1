@@ -1,0 +1,92 @@
+2020-11-06 13:54:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT GROUPS[*] VALUES M33031"; ожидалось "INTO"
+Syntax error in SQL statement "INSERT GROUPS[*] VALUES M33031"; expected "INTO"; SQL statement:
+INSERT Groups values M33031 [42001-200]
+2020-11-06 13:56:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "INSERT INTOGROUPS[*] VALUES (M33031)"; ожидалось "INTO"
+Syntax error in SQL statement "INSERT INTOGROUPS[*] VALUES (M33031)"; expected "INTO"; SQL statement:
+INSERT intoGroups values (M33031) [42001-200]
+2020-11-06 13:56:56 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Неверное количество столбцов
+Column count does not match; SQL statement:
+INSERT into Groups values (M33031) [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at schedule.repository.BaseTable.executeSqlStatement(BaseTable.java:34)
+	at schedule.repository.BaseTable.executeSqlStatement(BaseTable.java:41)
+	at schedule.repository.BaseTable.insert(BaseTable.java:74)
+	at schedule.service.ScheduleInterface.main(ScheduleInterface.java:48)
+2020-11-06 14:05:13 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "M33031" не найден
+Column "M33031" not found; SQL statement:
+INSERT into Groups ( GroupNumber )  values (M33031) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Insert.prepare(Insert.java:327)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at schedule.repository.BaseTable.executeSqlStatement(BaseTable.java:35)
+	at schedule.repository.BaseTable.executeSqlStatement(BaseTable.java:42)
+	at schedule.repository.BaseTable.insert(BaseTable.java:75)
+	at schedule.service.ScheduleInterface.main(ScheduleInterface.java:48)
+2020-11-06 14:06:06 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT * GROUPS[*]"
+Syntax error in SQL statement "SELECT * GROUPS[*]"; SQL statement:
+SELECT * Groups [42000-200]
+2020-11-06 14:08:46 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLDataException: Недопустимое значение "0" для параметра "columnIndex"
+Invalid value "0" for parameter "columnIndex" [90008-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:590)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcResultSet.checkColumnIndex(JdbcResultSet.java:3212)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3251)
+	at org.h2.jdbc.JdbcResultSet.getNString(JdbcResultSet.java:3648)
+	at schedule.service.ScheduleInterface.main(ScheduleInterface.java:50)
+2020-11-06 14:09:46 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLDataException: Недопустимое значение "3" для параметра "columnIndex"
+Invalid value "3" for parameter "columnIndex" [90008-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:590)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcResultSet.checkColumnIndex(JdbcResultSet.java:3212)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3251)
+	at org.h2.jdbc.JdbcResultSet.getNString(JdbcResultSet.java:3648)
+	at schedule.service.ScheduleInterface.main(ScheduleInterface.java:50)
+2020-11-06 14:12:33 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно очистить "PUBLIC.""GROUPS"""
+Cannot truncate "PUBLIC.""GROUPS"""; SQL statement:
+TRUNCATE TABLE Groups [90106-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.ddl.TruncateTable.update(TruncateTable.java:43)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at schedule.repository.BaseTable.executeSqlStatement(BaseTable.java:35)
+	at schedule.repository.BaseTable.executeSqlStatement(BaseTable.java:42)
+	at schedule.repository.BaseTable.cleanTable(BaseTable.java:70)
+	at schedule.service.ScheduleInterface.main(ScheduleInterface.java:51)
